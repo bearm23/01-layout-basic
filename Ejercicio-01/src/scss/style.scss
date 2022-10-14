@@ -1,0 +1,55 @@
+@use "variables/reset";
+@use "variables/colors" as color;
+@use "partials/palette-mixins" as palette;
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    color: color.$text;
+    font-family: sans-serif;
+}
+
+.palette {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px;
+
+    div {
+        border-radius: 8px;
+        padding: 30px;
+
+        &.base-color {
+            color: #fff;
+        }
+    }
+
+    &--green div {
+        &.base-color {
+            background-color: color.$green;
+        }
+
+        @include palette.darkenBoxes(color.$green);
+        @include palette.lightenBoxes(color.$green);
+    }
+
+    &--red div {
+        &.base-color {
+            background-color: color.$red;
+        }
+
+        @include palette.darkenBoxes(color.$red);
+        @include palette.lightenBoxes(color.$red);
+    }
+
+    &--blue div {
+        &.base-color {
+            background-color: color.$blue;
+        }
+
+        @include palette.darkenBoxes(color.$blue);
+        @include palette.lightenBoxes(color.$blue);
+    }
+}

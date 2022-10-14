@@ -1,0 +1,7 @@
+@function set-color-darken($color, $amount: 5%) {
+    @return darken($color, $amount);
+}
+
+@function set-color-lighten($color, $amount: 5%) {
+    @return lighten($color, $amount);
+}

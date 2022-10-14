@@ -1,0 +1,73 @@
+@use "variables/reset";
+@use "variables/colors" as color;
+@use "partials/buttons";
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: color.$body;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+    padding: 50px;
+
+    .card {
+        display: grid;
+        justify-self: center;
+        grid-auto-rows: min-content min-content min-content auto;
+        box-shadow: inset 0 0 0 1px color.$box-border;
+        border-radius: 3px;
+        max-width: 300px;
+
+        h3,
+        p,
+        &--footer {
+            margin: 15px;
+        }
+
+        img {
+            border-radius: 3px 3px 0 0;
+            max-width: 100%;
+        }
+
+        h3 {
+            font-size: 22px;
+        }
+
+        p {
+            font-size: 13px;
+            line-height: 1.5;
+            color: color.$body-secondary;
+        }
+
+        span {
+            display: block;
+            text-align: right;
+            font-size: 14px;
+            color: color.$box-date;
+            padding-bottom: 15px;
+
+            strong {
+                color: color.$body;
+            }
+        }
+
+        &--footer {
+            align-self: end;
+
+            input {
+                width: 100%;
+            }
+        }
+    }
+
+    @media screen and (min-width: 640px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (min-width: 820px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

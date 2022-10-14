@@ -1,0 +1,21 @@
+@use "color-functions" as *;
+
+@mixin darkenBoxes($color, $currentBox: 1, $lastBox: 5) {
+    @while $currentBox <=$lastBox {
+        &:nth-child(#{$currentBox}) {
+            background-color: set-color-darken($color, ($lastBox - $currentBox) * 10%);
+        }
+
+        $currentBox: $currentBox + 1;
+    }
+}
+
+@mixin lightenBoxes($color, $currentBox: 6, $lastBox: 9) {
+    @while $currentBox <=$lastBox {
+        &:nth-child(#{$currentBox}) {
+            background-color: set-color-lighten($color, $currentBox * 5%);
+        }
+
+        $currentBox: $currentBox + 1;
+    }
+}

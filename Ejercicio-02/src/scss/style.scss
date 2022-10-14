@@ -1,0 +1,47 @@
+@use "variables/reset";
+@use "variables/theme-a" as *;
+
+body {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    color: $color-text;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container {
+    .box {
+        font-family: $font-family-box;
+        border: 1px solid $color-text;
+        border-radius: $border-radius;
+        padding: 30px;
+        margin-bottom: 5px;
+
+        &--base {
+            background-color: $color-base;
+        }
+
+        &--important {
+            background-color: $color-important;
+        }
+
+        &--warning {
+            background-color: $color-warning;
+        }
+
+        &--shadow {
+            box-shadow: $box-shadow;
+        }
+    }
+
+    label {
+        display: block;
+        margin: 20px 0;
+    }
+
+    .secondary-text {
+        font-family: $font-family-secondary;
+    }
+}
